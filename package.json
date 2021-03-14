@@ -1,0 +1,21 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "Manage company employee tracker",
+  "main": "emp-tracker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node emp-tracker.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reebritt/employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "Sheree Britt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reebritt/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/reebritt/employee-tracker#readme"
+}
