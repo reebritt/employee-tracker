@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const inquirer = require('inquirer');
 const cTABLE = require('console.table');
-const { allowedNodeEnvironmentFlags } = require('node:process');
+
 
 const connection = mysql.createConnection({
     host: 'localhost',
