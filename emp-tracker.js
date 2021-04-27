@@ -180,14 +180,13 @@ function addEmployee() {
 }
 
     function viewEmployees() {
-        connection.query(
-            "SELECT * from employee",
-            function (err, res) {
+        const query = 'SELECT * FROM employee';
+        connection.query(query, function (err, res) {
                 if (err) throw err;
                 console.log(res.length + "employes found!");
                 console.table('All Employees:', res);
                 mainMenu();
-            });
+            })
     }
 
     function viewDepartments() {
