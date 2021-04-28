@@ -123,7 +123,7 @@ function addRole() {
                 })
         })
     })
-}
+};
 
 function addEmployee() {
     connection.query('SELECT * FROM role', function (err, res) {
@@ -177,13 +177,13 @@ function addEmployee() {
                 })
         })
     })
-}
+};
 
     function viewEmployees() {
         const query = 'SELECT * FROM employee';
         connection.query(query, function (err, res) {
                 if (err) throw err;
-                console.log(res.length + "employes found!");
+            //    console.log(res.length + "employes found!");
                 console.table('All Employees:', res);
                 mainMenu();
             })
@@ -205,7 +205,27 @@ function addEmployee() {
             console.table('All roles:', res);
             mainMenu();
         })
-    }
-    
-    
-// add update function
+    };
+
+    function updateEmployee() {
+        const query = 'SELECT * FROM employee';
+        connection.query(query, function (err, res) 
+        { console.table('All employees:', res);
+          inquirer.prompt([
+                {
+                    name: 'first_name',
+                    type: 'input',
+                    message: "Employee's first name:"
+                },
+                {
+                    name: 'role_id',
+                    type: 'number',
+                    message: "Update employee's role:"
+                }
+            ]).then(answers=> {
+                connection.query("Update employee SET role_id = ? WHERE first_name = ? ", [answers.role_id, answers.first_name], function (err, res){
+                   mainMenu();
+                })          
+            })
+            })
+        };
